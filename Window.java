@@ -2,11 +2,11 @@ public class Window
 {
     public static void main(String[] args)
     {
-        //Input decides which graph we will draw.
+        //Input decides which graph we will draw. The inpu picks which one of the first 3 grphs we draw. 
+        int input= 3;
         Node nodes[];
         Connector connectors[];
         Text textarray[];
-        int input= 3;
         WindowsMode status = new WindowsMode(input);
         //This creates an instance of the Game arena class.
         GameArena window = new GameArena(1000,800,true);
