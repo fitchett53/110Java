@@ -2,33 +2,25 @@ public class Window
 {
     public static void main(String[] args)
     {
-        int input= 3;
-        GameArena window = new GameArena(1000,800);
-        
-       
-
-
+        //Input decides which graph we will draw.
         Node nodes[];
-        int[] xLocs;
-        int[] yLocs;
         Connector connectors[];
         Text textarray[];
-        Arrow arrowArray[];
-        
+        int input= 3;
         WindowsMode status = new WindowsMode(input);
+        //This creates an instance of the Game arena class.
+        GameArena window = new GameArena(1000,800,true);
+        //This updates the node positon of the screen.
         status.NodePos();
-        // status.getGameArena(window);
         status.LinePos(window);
-        arrowArray = status.getarrowArray();
+        //These arrays hold the balls, text and lines to be added.
         textarray = status.getTextArray();
         nodes = status.getArray();
         connectors = status.getLineArray();
+        //These if statements add the balls, thentext, and thelines to the Game Arena
         for(int z = 0; z < connectors.length;z++){
             window.addLine(connectors[z]);
         }
-        // for(int z = 0; z < arrowArray.length;z++){
-        //     window.addLine(arrowArray[z]);
-        // }
         for(int x = 0; x < nodes.length;x++){
             window.addText(textarray[x]);
             window.addBall(nodes[x]);
@@ -36,9 +28,7 @@ public class Window
         for(int x = 0; x < textarray.length;x++){
             window.addText(textarray[x]);
         }
-        
-        
-        
+        //This updates the screen.
         window.update();
     }
     

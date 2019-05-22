@@ -1,18 +1,26 @@
 public class WindowsMode
 {
+    /**
+     * Constructor. Extends ball to my Node class meaning we can use the attributes of a ball.
+     * 
+     *
+     * @param nodeArray Creates an empty array to store the nodes in.
+     * @param lineArray Creates an empty array to store the lines.
+     * @param arrows Creates an array to store the arrows in.
+     * @param textArray Creates an array to store the text for the nodes.
+     * @param Input This variable determines which graph we will display.
+	 */
     private Node[] nodeArray = new Node[15];
-    private int[] xPositions;
-    private int[] yPositions;
     private Connector[] lineArray = new Connector[15];
     private Arrow[] arrows = new Arrow[15];
     private Text[] textArray = new Text[15];
-    private GameArena arena;
     private int Input;
     public WindowsMode(int input)
     {
         Input = input;
         
     }
+    //This will create the nodes and the text for the first 3 graphs, depending on the input variable.
     public void NodePos()
     {
         if(Input == 0){
@@ -51,10 +59,10 @@ public class WindowsMode
             nodeArray[1] = new Node(50, 100, 10, "#FF0000");
             nodeArray[2] = new Node(100, 175, 10, "#FF0000");
             nodeArray[3] = new Node(150, 100, 10, "#FF0000");
-            textArray[0] = new Text("1", 97, 28, 10, "#FFFFFF");
-            textArray[1] = new Text("2", 47, 103, 10, "#FFFFFF");
-            textArray[2] = new Text("3", 97, 178, 10, "#FFFFFF");
-            textArray[3] = new Text("4", 147, 103, 10, "#FFFFFF");
+            textArray[0] = new Text("J", 97, 28, 10, "#FFFFFF");
+            textArray[1] = new Text("K", 47, 103, 10, "#FFFFFF");
+            textArray[2] = new Text("L", 97, 178, 10, "#FFFFFF");
+            textArray[3] = new Text("M", 147, 103, 10, "#FFFFFF");
             
         }
         else{
@@ -64,6 +72,7 @@ public class WindowsMode
         }
 
     }
+    //This will create the lines for the first 3 graphs, depending on the input variable.
     public void LinePos(GameArena gameare)
     {
         if(Input == 0){
@@ -104,7 +113,7 @@ public class WindowsMode
             lineArray[0] = new Connector(55,65,55,210,5, "#0000FF");
         }
     }
-
+    //These methods are used to get the arrays back into the Window class.
     public Node[] getArray()
     {
         return nodeArray;
@@ -116,13 +125,5 @@ public class WindowsMode
     public Text[] getTextArray()
     {
         return textArray;
-    }
-    public Arrow[] getarrowArray()
-    {
-        return arrows;
-    }
-    public Node getNode(int index)
-    {
-        return nodeArray[index];
     }
 }
